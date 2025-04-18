@@ -1,0 +1,385 @@
+.sos-page {
+  width: 100%;
+  min-height: 100vh;
+  background-color: #f8f9fa;
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  font-family: "Poppins", sans-serif;
+}
+
+.sos-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1.5rem;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid #eee;
+}
+
+.sos-header h1 {
+  font-size: 1.8rem;
+  font-weight: 600;
+  color: #333;
+  margin: 0;
+}
+
+.back-button {
+  background: none;
+  border: none;
+  font-size: 1.5rem;
+  color: #666;
+  cursor: pointer;
+  padding: 0.5rem;
+  border-radius: 50%;
+  transition: background-color 0.2s;
+}
+
+.back-button:hover {
+  background-color: rgba(0, 0, 0, 0.05);
+}
+
+.header-spacer {
+  width: 2rem;
+}
+
+.sos-description {
+  text-align: center;
+  margin-bottom: 2rem;
+  color: #666;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.emergency-services {
+  margin-bottom: 2rem;
+}
+
+.emergency-services h2 {
+  font-size: 1.2rem;
+  margin-bottom: 1rem;
+  color: #333;
+}
+
+.service-toggles {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.service-toggle {
+  background-color: white;
+  border-radius: 12px;
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+  flex: 1;
+  min-width: 90px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+  border: 2px solid transparent;
+}
+
+.service-toggle.active {
+  border-color: #ff5252;
+  background-color: rgba(255, 82, 82, 0.05);
+}
+
+.service-icon {
+  font-size: 1.8rem;
+}
+
+.service-name {
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: #333;
+}
+
+.emergency-contacts {
+  margin-bottom: 2rem;
+}
+
+.emergency-contacts h2 {
+  font-size: 1.2rem;
+  margin-bottom: 1rem;
+  color: #333;
+}
+
+.contacts-list {
+  background-color: white;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+  margin-bottom: 1rem;
+}
+
+.contact-item {
+  display: flex;
+  align-items: center;
+  padding: 1rem;
+  border-bottom: 1px solid #f0f0f0;
+}
+
+.contact-item:last-child {
+  border-bottom: none;
+}
+
+.contact-avatar {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background-color: #f0f2f5;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.2rem;
+  margin-right: 1rem;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+}
+
+.contact-info h3 {
+  margin: 0;
+  font-size: 1rem;
+  color: #333;
+}
+
+.contact-info p {
+  margin: 0.3rem 0 0;
+  font-size: 0.8rem;
+  color: #666;
+}
+
+.add-contact-button {
+  background: none;
+  border: 2px dashed #c9c9c9;
+  width: 100%;
+  padding: 1rem;
+  border-radius: 12px;
+  color: #666;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.add-contact-button:hover {
+  background-color: #f0f2f5;
+  border-color: #b0b0b0;
+}
+
+.sos-action {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: auto;
+  margin-bottom: 2rem;
+}
+
+.sos-button {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  background-color: #ff5252;
+  color: white;
+  font-size: 1.8rem;
+  font-weight: 700;
+  border: none;
+  box-shadow: 0 8px 25px rgba(255, 82, 82, 0.4);
+  cursor: pointer;
+  transition: all 0.3s ease;
+  animation: pulse-sos 2s infinite;
+}
+
+@keyframes pulse-sos {
+  0% {
+    box-shadow: 0 8px 25px rgba(255, 82, 82, 0.4), 0 0 0 0 rgba(255, 82, 82, 0.4);
+  }
+  70% {
+    box-shadow: 0 8px 25px rgba(255, 82, 82, 0.4), 0 0 0 15px rgba(255, 82, 82, 0);
+  }
+  100% {
+    box-shadow: 0 8px 25px rgba(255, 82, 82, 0.4), 0 0 0 0 rgba(255, 82, 82, 0);
+  }
+}
+
+.sos-button:hover {
+  transform: scale(1.05);
+}
+
+.sos-button:active {
+  transform: scale(0.95);
+}
+
+.sos-hint {
+  margin-top: 1rem;
+  color: #666;
+  font-size: 0.9rem;
+}
+
+.sos-active-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 2rem 1rem;
+  flex-grow: 1;
+}
+
+.countdown-circle {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  background-color: rgba(255, 82, 82, 0.1);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 2rem;
+  position: relative;
+  border: 4px solid #ff5252;
+  animation: pulse-countdown 1s infinite;
+}
+
+.countdown-circle.urgent {
+  animation: pulse-countdown-urgent 0.5s infinite;
+  background-color: rgba(255, 82, 82, 0.2);
+}
+
+@keyframes pulse-countdown {
+  0% {
+    box-shadow: 0 0 0 0 rgba(255, 82, 82, 0.7);
+  }
+  70% {
+    box-shadow: 0 0 0 15px rgba(255, 82, 82, 0);
+  }
+  100% {
+    box-shadow: 0 0 0 0 rgba(255, 82, 82, 0);
+  }
+}
+
+@keyframes pulse-countdown-urgent {
+  0% {
+    box-shadow: 0 0 0 0 rgba(255, 82, 82, 0.7);
+    transform: scale(1);
+  }
+  50% {
+    box-shadow: 0 0 0 15px rgba(255, 82, 82, 0);
+    transform: scale(1.05);
+  }
+  100% {
+    box-shadow: 0 0 0 0 rgba(255, 82, 82, 0);
+    transform: scale(1);
+  }
+}
+
+.countdown-number {
+  font-size: 4rem;
+  font-weight: 700;
+  color: #ff5252;
+}
+
+.countdown-text {
+  font-size: 0.9rem;
+  color: #666;
+}
+
+.alert-warning {
+  text-align: center;
+  font-size: 1rem;
+  color: #666;
+  margin-bottom: 2rem;
+  max-width: 500px;
+  line-height: 1.5;
+}
+
+.cancel-sos-button {
+  background-color: white;
+  color: #ff5252;
+  border: 2px solid #ff5252;
+  padding: 1rem 2rem;
+  border-radius: 50px;
+  font-weight: 600;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.cancel-sos-button:hover {
+  background-color: rgba(255, 82, 82, 0.1);
+}
+
+.cancel-sos-button:active {
+  transform: translateY(2px);
+}
+
+.safety-tip {
+  background-color: #f8f9fa;
+  border-left: 4px solid #ffc107;
+  padding: 1rem;
+  border-radius: 4px;
+  margin-top: auto;
+}
+
+.safety-tip p {
+  margin: 0;
+  color: #666;
+  font-size: 0.9rem;
+}
+
+@media (max-width: 768px) {
+  .sos-header h1 {
+    font-size: 1.5rem;
+  }
+  
+  .service-toggles {
+    gap: 0.8rem;
+  }
+  
+  .service-toggle {
+    padding: 0.8rem;
+    min-width: 80px;
+  }
+  
+  .sos-button {
+    width: 100px;
+    height: 100px;
+    font-size: 1.5rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .sos-page {
+    padding: 0.8rem;
+  }
+  
+  .sos-header h1 {
+    font-size: 1.2rem;
+  }
+  
+  .service-toggles {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+  
+  .service-toggle {
+    flex-direction: row;
+    justify-content: flex-start;
+    min-width: 0;
+    width: 100%;
+  }
+  
+  .service-icon {
+    margin-right: 1rem;
+  }
+  
+  .countdown-circle {
+    width: 120px;
+    height: 120px;
+  }
+  
+  .countdown-number {
+    font-size: 3rem;
+  }
+}

@@ -1,0 +1,201 @@
+.landing-container {
+  min-height: 100vh;
+  width: 100%;
+  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("/girl image.png");
+  background-repeat: no-repeat;
+  background-position: center 30%;
+  background-size: cover;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+  overflow-x: hidden;
+}
+
+.landing-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+  margin-top: 5rem;
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.8s ease, transform 0.8s ease;
+  width: 100%;
+  max-width: 800px;
+  text-align: center;
+}
+
+.landing-content.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.landing-title {
+  font-size: 4rem;
+  color: rgb(255, 255, 255);
+  font-family: "Brush Script MT", cursive;
+  margin-bottom: 0.5rem;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+  animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.05); }
+  100% { transform: scale(1); }
+}
+
+.landing-subtitle {
+  font-size: 1.2rem;
+  color: rgb(255, 255, 255);
+  margin-bottom: 2rem;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+}
+
+.feature-slider {
+  background-color: rgba(199, 143, 162, 0.8);
+  border-radius: 10px;
+  padding: 0.8rem 1.5rem;
+  margin-bottom: 2rem;
+  width: 80%;
+  max-width: 600px;
+  height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.feature-text {
+  color: white;
+  font-size: 1.2rem;
+  font-weight: 600;
+  opacity: 1;
+  animation: fadeInOut 3s infinite;
+  width: 100%;
+  text-align: center;
+}
+
+@keyframes fadeInOut {
+  0% { opacity: 0; transform: translateY(10px); }
+  10% { opacity: 1; transform: translateY(0); }
+  90% { opacity: 1; transform: translateY(0); }
+  100% { opacity: 0; transform: translateY(-10px); }
+}
+
+.landing-buttons {
+  display: flex;
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+
+.get-started-btn, .login-btn {
+  padding: 12px 24px;
+  border: none;
+  color: white;
+  font-size: 1rem;
+  border-radius: 10px;
+  cursor: pointer;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.3);
+  transition: all 0.3s ease;
+}
+
+.get-started-btn {
+  background-color: #c78fa2;
+}
+
+.login-btn {
+  background-color: transparent;
+  border: 2px solid white;
+}
+
+.get-started-btn:hover {
+  background-color: #9e5f73;
+  transform: translateY(-3px);
+}
+
+.login-btn:hover {
+  background-color: rgba(255, 255, 255, 0.2);
+  transform: translateY(-3px);
+}
+
+.landing-info {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 2rem;
+  padding: 3rem 2rem;
+  background-color: rgba(255, 255, 255, 0.9);
+  width: 100%;
+  margin-top: auto;
+}
+
+.info-card {
+  flex: 1;
+  min-width: 250px;
+  max-width: 350px;
+  padding: 1.5rem;
+  border-radius: 10px;
+  background-color: white;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+}
+
+.info-card:hover {
+  transform: translateY(-10px);
+}
+
+.info-card h3 {
+  color: #c78fa2;
+  margin-bottom: 1rem;
+  font-size: 1.5rem;
+}
+
+.info-card p {
+  color: #333;
+  line-height: 1.6;
+}
+
+/* Media Queries for Responsiveness */
+@media (max-width: 768px) {
+  .landing-title {
+    font-size: 3rem;
+  }
+  
+  .landing-subtitle {
+    font-size: 1rem;
+  }
+  
+  .feature-slider {
+    width: 90%;
+  }
+  
+  .feature-text {
+    font-size: 1rem;
+  }
+  
+  .landing-buttons {
+    flex-direction: column;
+    width: 80%;
+  }
+  
+  .get-started-btn, .login-btn {
+    width: 100%;
+  }
+}
+
+@media (max-width: 480px) {
+  .landing-title {
+    font-size: 2.5rem;
+  }
+  
+  .landing-content {
+    padding: 1rem;
+    margin-top: 3rem;
+  }
+  
+  .info-card {
+    min-width: 100%;
+  }
+}

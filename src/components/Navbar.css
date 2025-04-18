@@ -1,0 +1,255 @@
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 70px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+  transition: all 0.3s ease;
+  background-color: rgba(0, 0, 0, 0.2);
+  backdrop-filter: blur(10px);
+}
+
+.navbar.scrolled {
+  background-color: rgba(255, 255, 255, 0.95);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.navbar.scrolled .nav-link, 
+.navbar.scrolled .logo-text {
+  color: #333;
+}
+
+.navbar.scrolled .menu-icon span {
+  background-color: #333;
+}
+
+.navbar-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  max-width: 1200px;
+  padding: 0 2rem;
+}
+
+.navbar-logo {
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+}
+
+.logo-text {
+  color: white;
+  font-size: 1.8rem;
+  font-weight: 700;
+  font-family: "Brush Script MT", cursive;
+  letter-spacing: 1px;
+  transition: all 0.3s ease;
+}
+
+.nav-menu {
+  display: flex;
+  list-style: none;
+  text-align: center;
+  margin: 0;
+  padding: 0;
+}
+
+.nav-item {
+  height: 70px;
+  display: flex;
+  align-items: center;
+  position: relative;
+}
+
+.nav-link {
+  color: white;
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  padding: 0 1rem;
+  height: 100%;
+  font-size: 1rem;
+  font-weight: 500;
+  transition: all 0.3s ease;
+}
+
+.nav-link:hover {
+  color: #c78fa2;
+}
+
+.nav-link.active {
+  color: #c78fa2;
+  font-weight: 600;
+}
+
+.nav-link.active::after {
+  content: '';
+  position: absolute;
+  bottom: 15px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 30px;
+  height: 3px;
+  background-color: #c78fa2;
+  border-radius: 10px;
+}
+
+.nav-auth {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.nav-login-btn, .nav-signup-btn {
+  padding: 8px 16px;
+  text-decoration: none;
+  border-radius: 8px;
+  font-weight: 500;
+  font-size: 0.9rem;
+  transition: all 0.3s ease;
+}
+
+.nav-login-btn {
+  color: white;
+  border: 1px solid rgba(255, 255, 255, 0.5);
+}
+
+.nav-signup-btn {
+  background-color: #c78fa2;
+  color: white;
+}
+
+.navbar.scrolled .nav-login-btn {
+  color: #333;
+  border: 1px solid rgba(0, 0, 0, 0.2);
+}
+
+.nav-login-btn:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+.navbar.scrolled .nav-login-btn:hover {
+  background-color: rgba(0, 0, 0, 0.05);
+}
+
+.nav-signup-btn:hover {
+  background-color: #9e5f73;
+}
+
+.mobile-menu-icon {
+  display: none;
+  cursor: pointer;
+}
+
+.menu-icon {
+  width: 30px;
+  height: 20px;
+  position: relative;
+  transform: rotate(0deg);
+  transition: 0.5s ease-in-out;
+}
+
+.menu-icon span {
+  display: block;
+  position: absolute;
+  height: 3px;
+  width: 100%;
+  background: white;
+  border-radius: 3px;
+  opacity: 1;
+  left: 0;
+  transform: rotate(0deg);
+  transition: 0.25s ease-in-out;
+}
+
+.menu-icon span:nth-child(1) {
+  top: 0px;
+}
+
+.menu-icon span:nth-child(2) {
+  top: 8px;
+}
+
+.menu-icon span:nth-child(3) {
+  top: 16px;
+}
+
+.menu-icon.open span:nth-child(1) {
+  top: 8px;
+  transform: rotate(135deg);
+}
+
+.menu-icon.open span:nth-child(2) {
+  opacity: 0;
+  left: -60px;
+}
+
+.menu-icon.open span:nth-child(3) {
+  top: 8px;
+  transform: rotate(-135deg);
+}
+
+/* Responsive Styles */
+@media screen and (max-width: 960px) {
+  .navbar-container {
+    padding: 0 1rem;
+  }
+  
+  .nav-menu {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 90vh;
+    position: absolute;
+    top: 70px;
+    left: -100%;
+    opacity: 0;
+    transition: all 0.5s ease;
+    background-color: rgba(255, 255, 255, 0.95);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  }
+
+  .nav-menu.active {
+    left: 0;
+    opacity: 1;
+    transition: all 0.5s ease;
+    z-index: 1;
+  }
+
+  .nav-item {
+    height: 60px;
+    width: 100%;
+    justify-content: center;
+  }
+
+  .nav-link {
+    color: #333;
+    width: 100%;
+    justify-content: center;
+    padding: 2rem;
+  }
+
+  .mobile-menu-icon {
+    display: block;
+    margin-right: 20px;
+  }
+
+  .nav-auth {
+    display: none;
+  }
+  
+  .nav-link.active::after {
+    bottom: 20px;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .logo-text {
+    font-size: 1.5rem;
+  }
+} 
